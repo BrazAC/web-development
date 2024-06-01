@@ -1,0 +1,42 @@
+.flag{
+    background-color: red;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#theFlag{
+    color: white;
+    text-align: center;
+    display: block;
+
+    margin: auto 0;
+}
+
+#ofLaos{
+    background-color: white;
+    color: black;
+    text-align: center;
+    display: block;
+
+    margin: 35px auto;
+    width: 180px;
+    height: 180px;
+
+    border-radius: 100px;
+}
+
+#bluePart{
+    background-color: blue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    width: 100%;
+    height: 50%;
+    
+
+    margin-top: 75px;
+}
