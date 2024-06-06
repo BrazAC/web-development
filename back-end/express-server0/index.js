@@ -24,3 +24,7 @@ app.get("/contact", (req, res) => {
 app.get("/about", (req, res) => {
     res.send("About page!")
 })
+
+app.post("/", (req, res)=>{
+    res.sendStatus(200)
+})
