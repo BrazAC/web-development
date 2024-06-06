@@ -11,11 +11,20 @@ const port = 3000;
 
 //Adicionando funcoes middleware ao array de execucao do Express
 //Usando urlencoded devido ao tipo de data (oriundo de um forumlario)
-app.use(bodyParser.urlencoded({extended: true}))
+app.use("/submit", bodyParser.urlencoded({extended: true}))
 
-//Adicionando funcao middlewaremorgan ao array do Express
+//Adicionando funcao middleware morgan ao array do Express
 //pra mostra as informacoes do request no terminal
 app.use("/submit",morgan("combined"));
+
+//Adicionano middleware custom
+function logger (req, res, next){
+    console.log(req.method);
+    console.log(req.url);
+    next();
+}
+
+app.use("/submit", logger);
 
 
 app.get("/", (req, res) => {
@@ -24,10 +33,9 @@ app.get("/", (req, res) => {
 
 //Quando receber a request mostre o body da request (trabalhado
 //pelo middleware body-parser em algo legivel) no terminal. 
-
 app.post("/submit", (req, res) => {
     console.log(req.body);
-    res.send("Forumlario enviado!");
+    res.send(`<h1>Seu login unido:</h1><p>${req.body.email + req.body.password}</p>`);
 });
 
 app.listen(port, ()=>{
