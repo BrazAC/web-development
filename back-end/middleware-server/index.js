@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import morgan from 'morgan';
 //Obtendo o caminho absoluto 
 import path from "path";
 import url from 'url';
@@ -9,7 +10,12 @@ const app = express();
 const port = 3000;
 
 //Adicionando funcoes middleware ao array de execucao do Express
+//Usando urlencoded devido ao tipo de data (oriundo de um forumlario)
 app.use(bodyParser.urlencoded({extended: true}))
+
+//Adicionando funcao middlewaremorgan ao array do Express
+//pra mostra as informacoes do request no terminal
+app.use("/submit",morgan("combined"));
 
 
 app.get("/", (req, res) => {
