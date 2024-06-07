@@ -1,0 +1,10 @@
+<h1>What is the day site</h1>
+<h2>The site that shows what day is today</h2>
+<% if (day) {%>
+    <% if (day > 0 && day < 6) {%>
+        <h2>Today is weekday</h2>
+    <% } else{%>
+        <h2>Today is weekend</h2>
+    <% } %>
+<% } %>
+
