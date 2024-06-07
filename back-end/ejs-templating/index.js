@@ -12,6 +12,8 @@ const port = 3000;
 app.get("/", (req, res) => {
     const date = new Date();
 
+    //Envia como resposta a renderizacao do arquivo.ejs que
+    //recebe a informacao do dia da semana.
     res.render(__dirname + "/views/index.ejs", {day: date.getDay()});
 });
 
