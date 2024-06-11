@@ -1,0 +1,29 @@
+1 - O usuario ira para uma homepage onde devera escolher um topico
+2 - Ao escolher um topico o usuario ira para a page de publicacoes do topico
+3 - Na pagina do topico o usuario devera poder:
+	3.1 - Criar e publicar posts
+	3.2 - Ver os posts publicados
+	3.3 - Editar posts
+	3.4 - Apagar posts
+4 - Design baseado no reddit!
+
+*Pela ausencia de um banco de dados os posts nao devem permanecer entre sessoes
+
+//-Etapa 00 - Planning
+- Planejar como a aplicacao ira funcionar, que rotas e webpages serao necessarias 
+- Criar wireframes das webpages do site
+- Se possivel criar um mockup do projeto
+
+//-Etapa 01 - Setup
+- criar pastas do diretorio e organizar (public, view...)
+- inicializar npm e instalar pacotes basicos (express, ejs, body-parser)...
+- criar servidor express e escrever os handlers de roteamento e middlewares
+
+//-Etapa 02 - Feature implementing
+- implementar criacao e publicacao e vizualisacao de posts
+- implementar edicao de posts publicados
+- implementar delete de posts
+
+//-Etapa 03 - Styling and polishing
+- deixar bonito com CSS (se quiser, usar algum framework)
+- testar em diferentes navegadores e dispositivos (deve funcionar em mobile)

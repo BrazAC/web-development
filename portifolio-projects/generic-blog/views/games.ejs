@@ -1,0 +1,31 @@
+<%- include('./partials/header.ejs') %>
+    <h1>Games</h1>
+    <!--Mandar texto para os servidor-->
+    <div id="write-post-container">
+        <form action = "/newPost" method="POST">
+            <input name="title" type="text" maxlength="25" placeholder="Title">
+            <textarea name="text" rows="5" cols="75" maxlength="250"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <!--Adicionar texto enviado ao servidor na pagina-->
+    <div id="published-posts">
+        <% if(locals.title && locals.content) {%>
+            <script>
+                const postsContainerDiv = document.getElementById("published-posts");
+                //Creating elements
+                const post = document.createElement("div");
+                const postTitle = document.createElement("p");
+                const postText = document.createElement("p");
+                //Adding information to elements
+                postTitle.textContent = <%- JSON.stringify(title) %>;
+                postText.textContent = <%- JSON.stringify(content)%>;
+                //Appending elements in the page
+                postsContainerDiv.appendChild(postTitle);
+                postsContainerDiv.appendChild(postText);
+            </script>
+        <% } %>
+    </div>
+
+<!--Post management with external JS (find it in footer.ejs)-->
+<%- include('./partials/footer.ejs') %>
